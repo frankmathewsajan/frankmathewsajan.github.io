@@ -1,24 +1,13 @@
-/* Ensure full viewport usage */
-html, body, #root, .app-container {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  position: relative;
-  background: black;
+@import "tailwindcss";
+
+.dotted-background {
+    position: relative;
+    background-image: radial-gradient(circle, #00c7bd7f 1px, #0a0a0a00 1px);
+    background-size: 25px 25px;
+    transition: background-size .3s ease;
 }
 
-/* Card styling for the description */
-.description-card {
-  position: absolute;
-  top: 60%; /* places the card in the bottom half of the left side */
-  left: 5%;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 24px; /* Larger text */
-  line-height: 1.5;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+body {
+    background: #060606;
+    overflow: hidden;
 }
