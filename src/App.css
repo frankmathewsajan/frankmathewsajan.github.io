@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
-.dotted-background {
-    position: relative;
-    background-image: radial-gradient(circle, #00c7bd7f 1px, #0a0a0a00 1px);
-    background-size: 25px 25px;
-    transition: background-size .3s ease;
-}
-
 body {
     background: #060606;
     overflow: hidden;
 }
+
+.the-head {
+    font-size: 5pc;
+}
+

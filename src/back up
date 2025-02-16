@@ -1,0 +1,40 @@
+useEffect(() => {
+        if (showMainContent) {
+            // Show image immediately
+            setShowImage(true);
+            // After 100ms, animate the image to move right
+            setTimeout(() => {
+                setMoveImage(true);
+            }, 100);
+            // After 500ms, show the DecryptedText overlay at top left
+            setTimeout(() => {
+                setShowDecryptedText(true);
+            }, 500);
+            // After 1000ms, show both TrueFocus (bottom left) and the Dock
+            setTimeout(() => {
+                setShowTrueFocus(true);
+                setShowDock(true);
+            }, 1000);
+        }
+    }, [showMainContent]);
+
+
+
+    const handleAnimationComplete = () => {
+        setTimeout(() => {
+            setBlurredText("Hi! I'm Frank!");
+            setTimeout(() => {
+                setShowMainContent(true);
+            }, 1500);
+        }, 1000);
+    };
+
+
+
+    const [showMainContent, setShowMainContent] = useState(false);
+    const [showImage, setShowImage] = useState(false);
+    const [moveImage, setMoveImage] = useState(false);
+    const [showDock, setShowDock] = useState(false);
+    const [showDecryptedText, setShowDecryptedText] = useState(false);
+    const [showTrueFocus, setShowTrueFocus] = useState(false);
+    const [blurredText, setBlurredText] = useState("¡Hola, soy Frank!");
