@@ -1,0 +1,39 @@
+name: Deploy Vite App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Run this workflow when pushing to main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  # Use the latest stable version
+
+      - name: Install Yarn
+        run: npm install -g yarn  # Install Yarn globally
+
+      - name: Install Dependencies
+        run: yarn install  # Use Yarn instead of npm
+
+      - name: Build Project
+        run: yarn build  # Use Yarn to build the project
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # Deploy to the gh-pages branch
+          folder: dist  # Upload the dist folder
