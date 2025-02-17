@@ -69,3 +69,26 @@ import {VscHome, VscProject, VscNotebook, VscMail} from "react-icons/vsc";
     /*const [moveImage, setMoveImage] = useState(false);
     x: moveImage ? 250 : 0, y: moveImage ? 10 : 0*/
     const [showDock, setShowDock] = useState(false);
+
+
+    {content.map((text, i) => (
+                        <DecryptedText
+                            key={i}
+                            text={text}
+                            speed={60}
+                            maxIterations={2}
+                            sequential={true}
+                            animateOn="view"
+                            revealDirection="start"
+                        />
+                    ))}
+
+
+                    // import DecryptedText from "./components/DecryptedText.jsx";
+
+/*const content = [
+    "Software engineer with grip on app",
+    "and web development, control",
+    "engineering and robotics."
+
+]*/

@@ -17,25 +17,35 @@
 
 body {
     background: #e7dfd8;
-    overflow: hidden;
 }
 
 .the-head {
-    font-size: 8pc;
+    font-size: 10vw; /* Scales with the viewport width */
     color: black;
+    text-align: center; /* Ensures better alignment */
+    width: 80%;
+    overflow: hidden;
 }
 
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .the-head {
+        font-size: 8vw;
+    }
+    .image-class {
+        float: left;
+        width: 20vh;
+    }
 
-.the-left {
-    position: absolute;
-    left: 10%;
-    top: 20%;
-    width: 45vw;
-    color: #060606;
-    font-family: "Agrandir", sans-serif;
 }
 
-.the-border {
-    box-shadow: inset 0 0 0 2px black;
+@media (max-width: 480px) {
+    .the-head {
+        font-size: 12vw;
+    }
+    .image-class {
+        float: left;
+        width: 20vh;
+    }
 }
 
