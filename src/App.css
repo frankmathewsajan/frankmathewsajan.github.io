@@ -1,11 +1,41 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Agrandir";
+    src: url("/fonts/Agrandir-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Agrandir";
+    src: url("/fonts/Agrandir-TextBold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+
+}
+
 body {
-    background: #060606;
+    background: #e7dfd8;
     overflow: hidden;
 }
 
 .the-head {
-    font-size: 5pc;
+    font-size: 8pc;
+    color: black;
+}
+
+
+.the-left {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 45vw;
+    color: #060606;
+    font-family: "Agrandir", sans-serif;
+}
+
+.the-border {
+    box-shadow: inset 0 0 0 2px black;
 }
 

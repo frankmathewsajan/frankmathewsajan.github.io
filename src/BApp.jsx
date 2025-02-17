@@ -4,16 +4,16 @@ import Ribbons from './components/Ribbons';
 import BlurText from "./components/BlurText.jsx";
 import DecryptedText from "./components/DecryptedText"; // ensure the path is correct
 import TrueFocus from './TrueFocus'; // ensure the path is correct
-import { VscHome, VscProject, VscNotebook, VscMail } from "react-icons/vsc";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import {VscHome, VscProject, VscNotebook, VscMail} from "react-icons/vsc";
+import React, {useState, useEffect} from "react";
+import {motion} from "framer-motion";
 import profileImage from "./assets/frank.jpg"; // make sure your image is imported
 
 const items = [
-    { icon: <VscHome size={18} />, label: 'Home', onClick: () => alert('Home!') },
-    { icon: <VscProject size={18} />, label: 'Projects', onClick: () => alert('Projects!') },
-    { icon: <VscNotebook size={18} />, label: 'Blog', onClick: () => alert('Blog!') },
-    { icon: <VscMail size={18} />, label: 'Contact', onClick: () => alert('Contact!') },
+    {icon: <VscHome size={18}/>, label: 'Home', onClick: () => alert('Home!')},
+    {icon: <VscProject size={18}/>, label: 'Projects', onClick: () => alert('Projects!')},
+    {icon: <VscNotebook size={18}/>, label: 'Blog', onClick: () => alert('Blog!')},
+    {icon: <VscMail size={18}/>, label: 'Contact', onClick: () => alert('Contact!')},
 ];
 
 const App = () => {
@@ -70,27 +70,30 @@ const App = () => {
             ) : (
                 // Main content container uses relative positioning for overlays
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    initial={{opacity: 0, scale: 0.9}}
+                    animate={{opacity: 1, scale: 1}}
+                    transition={{duration: 0.8, ease: "easeOut"}}
                     className="w-full h-screen relative"
                 >
                     <div className="flex flex-col items-center justify-center h-full">
                         {showImage && (
                             <motion.div
-                                initial={{ opacity: 0, x: 0 }}
-                                animate={{ opacity: 1, x: moveImage ? 200 : 0 }} // moves 200px to the right when moveImage is true
-                                transition={{ duration: 1 }}
+                                initial={{opacity: 0, x: 0}}
+                                animate={{
+                                    opacity: 1,
+                                    x: moveImage ? 200 : 0
+                                }} // moves 200px to the right when moveImage is true
+                                transition={{duration: 1}}
                                 className="mb-4"
                             >
-                                <img src={profileImage} alt="Profile" className="w-100" />
+                                <img src={profileImage} alt="Profile" className="w-100"/>
                             </motion.div>
                         )}
                         {showDock && (
                             <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.8 }}
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1}}
+                                transition={{duration: 0.8}}
                             >
                                 <Dock
                                     items={items}
@@ -103,10 +106,10 @@ const App = () => {
                     </div>
                     {showDecryptedText && (
                         <motion.div
-                            style={{ position: 'absolute', top: 0, left: 0, marginTop: '4rem' }}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.8 }}
+                            style={{position: 'absolute', top: 0, left: 0, marginTop: '4rem'}}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            transition={{duration: 0.8}}
                         >
                             <DecryptedText
                                 text="This text animates when in view"
@@ -117,10 +120,10 @@ const App = () => {
                     )}
                     {showTrueFocus && (
                         <motion.div
-                            style={{ position: 'absolute', bottom: 0, left: 0 }}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.8 }}
+                            style={{position: 'absolute', bottom: 0, left: 0}}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            transition={{duration: 0.8}}
                         >
                             <TrueFocus
                                 sentence="True Focus"
@@ -137,5 +140,6 @@ const App = () => {
         </div>
     );
 };
+
 
 export default App;

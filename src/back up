@@ -38,3 +38,34 @@ useEffect(() => {
     const [showDecryptedText, setShowDecryptedText] = useState(false);
     const [showTrueFocus, setShowTrueFocus] = useState(false);
     const [blurredText, setBlurredText] = useState("¡Hola, soy Frank!");
+const items = [{icon: <VscHome size={18}/>, label: 'Home', onClick: () => alert('Home!')}, {
+    icon: <VscProject size={18}/>, label: 'Projects', onClick: () => alert('Projects!')
+}, {icon: <VscNotebook size={18}/>, label: 'Blog', onClick: () => alert('Blog!')}, {
+    icon: <VscMail size={18}/>,
+    label: 'Contact',
+    onClick: () => alert('Contact!')
+},];
+
+{
+    showDock && (<motion.div
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 0.8}}
+    >
+        <Dock
+            items={items}
+            panelHeight={68}
+            baseItemSize={50}
+            magnification={70}
+        />
+    </motion.div>)
+
+
+
+// import DecryptedText from "./components/DecryptedText.jsx";
+import {VscHome, VscProject, VscNotebook, VscMail} from "react-icons/vsc";
+
+
+    /*const [moveImage, setMoveImage] = useState(false);
+    x: moveImage ? 250 : 0, y: moveImage ? 10 : 0*/
+    const [showDock, setShowDock] = useState(false);
