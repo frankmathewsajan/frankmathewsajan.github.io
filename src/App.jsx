@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css'
 import BlurText from "./components/BlurText.jsx";
 import {useState, useEffect} from "react";
 import MainContent from "./MainContent.jsx";
